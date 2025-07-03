@@ -78,5 +78,23 @@ const allRatingsAboveForGenre = (movies, rating, genre) => {
   }
 };
 
-console.log(allRatingsAboveForGenre(movies, 7, "Action"));
-console.log(allRatingsAboveForGenre(movies, 8, "Biography"));
+// console.log(allRatingsAboveForGenre(movies, 7, "Action"));
+// console.log(allRatingsAboveForGenre(movies, 8, "Biography"));
+
+
+const user1 = { name: "Alice", age: 25 };
+const user2 = { name: "Bob" };
+const user3 = null;
+
+// ===== YOUR CODE BELOW =====
+// Create a function that safely gets a user's age
+const getUserAge = (user) => {
+  const userAge = user?.age;
+  return userAge
+  // Your code here - use optional chaining
+  
+};
+
+console.log(getUserAge(user1));z
+console.log(getUserAge(user2));
+console.log(getUserAge(user3));
