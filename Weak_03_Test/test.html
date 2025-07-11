@@ -9,11 +9,21 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-       
       }
-    .icon {
-            width: 8px;
-        }
+      .icon {
+        width: 40px;
+        margin-top: 8px;
+      }
+
+      .summery {
+        padding-top: 0px;
+        font-size: 20px;
+        line-height: 30px;
+      }
+      h1 {
+        font-size: 50px;
+        margin: 0px;
+      }
 
       body {
         margin: 0;
@@ -23,44 +33,51 @@
       }
       .main-container {
         width: 375px;
-
-        img{
-            width: 375px;
-            margin-top: 20px;
+        .web3 {
+          width: 375px;
+          margin-top: 20px;
         }
 
         .QA-container {
-          background-color: blueviolet;
+          background-color: hsl(240, 100%, 5%);
+          color: antiquewhite;
+          padding: 10px;
         }
         .list01 {
           display: flex;
           gap: 20px;
-          margin-bottom: 20px;
+          margin-bottom: 10px;
         }
         .list02 {
           display: flex;
           gap: 20px;
-          margin-bottom: 20px;
+          margin-bottom: 10px;
         }
         .list03 {
           display: flex;
           gap: 20px;
+          margin-bottom: 10px;
+        }
+        .num {
+          margin-top: 0px;
+          /* font-size: 40px; */
+          display: block;
+        }
+        span {
+          /* font-size: 40px; */
+          display: block;
+          margin-top: 10px;
           margin-bottom: 20px;
         }
-        .num{
-            margin-top: 8px;
-            /* font-size: 40px; */
-            display: block;
+        .listings {
+          font-size: 20px;
+          margin-bottom: 0px;
         }
-        span{
-            /* font-size: 40px; */
-            display: block;
-            margin-top: 40px;
-            margin-bottom: 40px;
-        }
-        .listings{
-            font-size: 30px;
-            margin-bottom: 0px;
+        .listimg {
+          width: 150px;
+          height: 180px;
+          object-fit: cover;
+          border-top: 0px;
         }
       }
     </style>
@@ -69,11 +86,15 @@
     <section class="main-container">
       <header>
         <img class="icon" src="logo.svg" alt="W logo" />
-        <img  class="icon" src="icon-menu.svg" alt="menu icon" />
+        <img class="icon" src="icon-menu.svg" alt="menu icon" />
       </header>
 
       <section class="card-container">
-        <img src="image-web-3-mobile.jpg" alt="app icons in animated poster" />
+        <img
+          class="web3"
+          src="image-web-3-mobile.jpg"
+          alt="app icons in animated poster"
+        />
         <div class="card-content">
           <h1>The Bright Future of Web 3.0?</h1>
           <p class="summery">
@@ -106,24 +127,38 @@
           </div>
           <div class="lists">
             <div class="list01">
-              <img src="image-retro-pcs.jpg" alt="retro pc picture" />
+              <img
+                class="listimg"
+                src="image-retro-pcs.jpg"
+                alt="retro pc picture"
+              />
               <p class="listings">
-                <span class="num">01</span> <span>Reviving Retro PCs </span>What happens
-                when old PCs are given modern upgrades?
+                <span class="num">01</span> <span>Reviving Retro PCs </span>What
+                happens when old PCs are given modern upgrades?
               </p>
             </div>
             <div class="list02">
-              <img src="image-top-laptops.jpg" alt="lapto keypord picture" />
-             <p class="listings">
-               <span class="num">02 </span> <span>Top 10 Laptops of 2022</span> Our best picks for
-                various needs and budgets.
+              <img
+                class="listimg"
+                src="image-top-laptops.jpg"
+                alt="lapto keypord picture"
+              />
+              <p class="listings">
+                <span class="num">02 </span>
+                <span>Top 10 Laptops of 2022</span> Our best picks for various
+                needs and budgets.
               </p>
             </div>
             <div class="list03">
-              <img src="image-gaming-growth.jpg" alt=" image of joy stic" />
+              <img
+                class="listimg"
+                src="image-gaming-growth.jpg"
+                alt=" image of joy stic"
+              />
               <p class="listings">
-                <span class="num">03</span> <span>The Growth of Gaming</span> How the
-                pandemic has sparked fresh opportunities.
+                <span class="num">03</span>
+                <span>The Growth of Gaming</span> How the pandemic has sparked
+                fresh opportunities.
               </p>
             </div>
           </div>
