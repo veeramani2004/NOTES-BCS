@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Animated Box</title>
+
+  <style>
+    body {
+      min-height: 100vh;
+      margin: 0;
+      display: grid;
+      place-content: center;
+      background-color: #f0f0f0;
+    }
+
+    .box {
+      width: 100px;
+      aspect-ratio: 2 / 4;
+      background: crimson;
+      border-radius: 20px;
+      transition: 0.3s ease;
+    }
+
+    .box:hover {
+      transform: scale(1.1) translateX(-20px);
+      background: orange;
+    }
+
+    .box:active {
+      transform: scale(0.95) translateY(-10px);
+      background: teal;
+    }
+  </style>
+</head>
+<body>
+  <div class="box"></div>
+</body>
+</html>

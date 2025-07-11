@@ -1,0 +1,180 @@
+ 
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400..900;1,400..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <style>
+      :root {
+        --primary-bg-clr: whitesmoke;
+        --secondary-bg-clr: white;
+        --accent-bg-clr: hsl(262, 100%, 98%);
+
+        --primary-text-clr: hsl(247, 71%, 20%);
+        --secondary-text-clr: hsl(261, 100%, 64%);
+
+        --ff-primary: Roboto, sans-serif;
+        --primary-disabled-text-clr: rgba(0, 0, 0, 0.5);
+      }
+
+      body {
+        background: var(--primary-bg-clr);
+
+        margin: 0;
+        min-height: 100vh;
+        display: grid;
+        place-content: center;
+      }
+
+      .pricing-section {
+        display: flex;
+        gap: 24px;
+        justify-content: center;
+      }
+
+      .pricing-card-container {
+        font-family: var(--ff-primary);
+        /* outline: 2px solid black; */
+        background: var(--secondary-bg-clr);
+        padding: 24px;
+        border-radius: 20px;
+        transition: 0.2s all;
+
+        ul {
+          padding-left: 18px;
+          list-style: none;
+          display: flex;
+          flex-direction: column;
+          gap: 12px;
+
+          li::marker {
+            content: "✔️ ";
+          }
+        }
+
+        h2 {
+          margin-top: 8px;
+        }
+
+        .amount {
+          font-size: 24px;
+          font-weight: 700;
+        }
+
+        h2,
+        .amount {
+          color: var(--primary-text-clr);
+        }
+
+        button {
+          width: 100%;
+          border-radius: 8px;
+          padding: 10px;
+          color: var(--secondary-text-clr);
+          font-weight: 700;
+          font-family: var(--ff-primary);
+          font-size: 16px;
+
+          background: var(--accent-bg-clr);
+          border: none;
+        }
+      }
+
+      .pricing-card-container:nth-child(1) li:nth-child(n + 2),
+      .pricing-card-container:nth-child(2) li:nth-child(n + 3),
+      .pricing-card-container:nth-child(3) li:last-child {
+        opacity: 50%;
+      }
+
+      .pricing-card-container:nth-child(3),
+      .pricing-card-container:hover {
+        background: var(--primary-text-clr);
+        color: var(--secondary-bg-clr);
+
+        transform: translateY(-20px);
+
+        h2,
+        .amount {
+          color: var(--secondary-bg-clr);
+        }
+
+        button {
+          background: var(--secondary-text-clr);
+          color: var(--secondary-bg-clr);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- <img src="./image.png" alt="" /> -->
+    <section class="pricing-section">
+      <div class="pricing-card-container">
+        <h2>Intro</h2>
+        <ul>
+          <li>Upload Video up to 720p Resolution</li>
+          <li>Attachment & Post Scheduling</li>
+          <li>Set your rates</li>
+          <li>Exclusive Deals</li>
+          <li>Advanced Statistics</li>
+        </ul>
+        <p>$<span class="amount">123</span> /month</p>
+        <button>Choose</button>
+      </div>
+      <div class="pricing-card-container">
+        <h2>Intro</h2>
+        <ul>
+          <li>Upload Video up to 720p Resolution</li>
+          <li>Attachment & Post Scheduling</li>
+          <li>Set your rates</li>
+          <li>Exclusive Deals</li>
+          <li>Advanced Statistics</li>
+        </ul>
+        <p>$<span class="amount">123</span> /month</p>
+        <button>Choose</button>
+      </div>
+
+      <div class="pricing-card-container">
+        <h2>Intro</h2>
+        <ul>
+          <li>Upload Video up to 720p Resolution</li>
+          <li>Attachment & Post Scheduling</li>
+          <li>Set your rates</li>
+          <li>Exclusive Deals</li>
+          <li>Advanced Statistics</li>
+        </ul>
+        <p>$<span class="amount">123</span> /month</p>
+        <button>Choose</button>
+      </div>
+
+      <div class="pricing-card-container">
+        <h2>Intro</h2>
+        <ul>
+          <li>Upload Video up to 720p Resolution</li>
+          <li>Attachment & Post Scheduling</li>
+          <li>Set your rates</li>
+          <li>Exclusive Deals</li>
+          <li>Advanced Statistics</li>
+        </ul>
+        <p>$<span class="amount">123</span> /month</p>
+        <button>Choose</button>
+      </div>
+    </section>
+  </body>
+</html>

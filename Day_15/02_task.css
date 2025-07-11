@@ -1,0 +1,26 @@
+:root {
+  --primary-clr: hsl(252deg 33.33% 97.06%);
+  --secondary-clr: hsl(245.68deg 69.81% 20.78%);
+  --acsent-clr: hsl(260.76deg 100% 63.73%);
+}
+
+.container {
+  display: flex;
+}
+li {
+  list-style: none;
+}
+ul {
+  padding: 0px;
+}
+i {
+}
+.intro {
+  height: 300px;
+  width: 250px;
+  background-color: var(--primary-clr);
+  border-radius: 20px;
+}
+p {
+  padding: 20px;
+}
