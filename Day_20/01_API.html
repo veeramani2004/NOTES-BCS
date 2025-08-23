@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .toppopulated-contrys {
+        white-space: pre;
+        font-family: monospace;
+      }
+    </style>
+  </head>
+  <body>
+    <ol class="toppopulated-contrys"></ol>
+
+    <script>
+      // API Endpoint | fetch -> Promise
+      function task() {
+        fetch("https://restcountries.com/v3.1/all?fields=name")
+          .then((res) => res.json())
+          .then((arr) => arr.map((country) => country.name.common))
+          .then((data) => console.log(data));
+      }
+      //   task();
+
+      function task2() {
+        fetch("https://restcountries.com/v3.1/all?fields=name,population")
+          .then((res) => res.json())
+          .then((countries) => {
+            const heighestpopulation = countries
+              .filter((country) => country.population >= 10000000)
+              .sort((a, b) => b.population - a.population)
+              .map((countriesnames) => countriesnames.name.common);
+            return heighestpopulation;
+          })
+
+          .then((data) => console.log(data));
+      }
+      //   task2();
+
+      function task3() {
+        fetch("https://restcountries.com/v3.1/all?fields=name,population")
+          .then((res) => res.json())
+          .then((countries) => {
+            const highestpopulation = countries
+              .filter((country) => country.population >= 10000000)
+              .sort((a, b) => b.population - a.population)
+              .map(
+                (country, intex) =>
+                  `${(intex + 1)
+                    .toString()
+                    .padStart(3)} . ${country.name.common.padEnd(
+                    15
+                  )} - ${country.population.toString().padStart(10)}`
+              )
+              .join("\n");
+
+            return highestpopulation;
+          })
+
+          .then((data) => console.log(data));
+      }
+      //   task3();
+
+      //  `${(index + 1).toString().padEnd(3)}. ` +
+      //          `${country.name.padEnd(15)} - ` +
+      //          `${country.population.toString().padStart(10)}`; -----> string pading
+
+      function task4() {
+        fetch("https://restcountries.com/v3.1/all?fields=name,population")
+          .then((res) => res.json())
+          .then((countries) => {
+            const highestpopulation = countries
+              .filter((country) => country.population >= 10000000)
+              .sort((a, b) => b.population - a.population)
+              .map(
+                (country, intex) =>
+                  `${(intex + 1)
+                    .toString()
+                    .padStart(3)} . ${country.name.common.padEnd(
+                    15
+                  )} - ${country.population.toString().padStart(10)}`
+              )
+              .slice(0, 10)
+              .join("\n");
+
+            return highestpopulation;
+          })
+
+          .then((data) => console.log(data));
+      }
+      // task4();
+
+      function task5() {
+        fetch("https://restcountries.com/v3.1/all?fields=name,population")
+          .then((res) => res.json())
+          .then((countries) => {
+            const highestpopulation = countries
+              .filter((country) => country.population >= 10000000)
+              .sort((a, b) => b.population - a.population)
+              .map(
+                (country) =>
+                  `<li>${country.name.common} - ${country.population}</li>`
+              )
+              .slice(0, 10);
+
+            document.querySelector(".toppopulated-contrys").innerHTML =
+              highestpopulation.join(" ");
+          });
+      }
+      // task5();
+
+      // Task 1.1 🗺️
+      // Print all the country names from the API https://restcountries.com/v3.1/all
+
+      // Task 1.2 🌍
+      // Print names of countries with population more than 10,000,000 (1 crore)
+      // Sort them in descending order of population
+      // Output format: ["India", "China", "Russia", ...]
+
+      // Task 1.3 📊
+      // Print countries with population more than 10,000,000
+      // Output format:
+      // 1. India - 150000000
+      // 2. China - 120000000
+      // 3. Russia - 80000000
+      // ...
+
+      // Task 1.4 🔟
+      // Get the top 10 most populated countries in descending order
+      // Output format similar to Task 1.3
+
+      // Task 1.5 📋
+      // Display the Top 10 most populated countries on the screen as a list
+      // Each list item should show: <Country Name> - <Population>
+
+      // Task 1.6 🌐
+      // Display all 250 countries on the screen with the following details:
+      // - Country Flag
+      // - Country Name
+      // - Population
+      // - Capital
+      // - Region
+    </script>
+  </body>
+</html>
