@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        min-height: 100vh;
+        margin: 0;
+        display: grid;
+        place-content: center;
+
+        font-family: sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+
+    <h1 class="count-down">10</h1>
+
+    <script>
+      // Callback HELL -> Promise
+  document.querySelector(".count-down").innerText = 
+      setTimeout(() => {
+       document.querySelector(".count-down").innerText = 10;
+        console.log("10");
+        setTimeout(() => {
+            document.querySelector(".count-down").innerText = 9;
+          console.log("9");
+          setTimeout(() => {
+            document.querySelector(".count-down").innerText = 8;
+            console.log("8");
+            setTimeout(() => {
+                document.querySelector(".count-down").innerText = 7;
+              console.log("7");
+              setTimeout(() => {
+                document.querySelector(".count-down").innerText = 6;
+                console.log("6");
+                setTimeout(() => {
+                    document.querySelector(".count-down").innerText = 5;
+                  console.log("5");
+                  setTimeout(() => {
+                    document.querySelector(".count-down").innerText = 4;
+                    console.log("4");
+                    setTimeout(() => {
+                        document.querySelector(".count-down").innerText = 3;
+                      console.log("3");
+                      setTimeout(() => {
+                        document.querySelector(".count-down").innerText = 2;
+                        console.log("2");
+                        setTimeout(() => {
+                            document.querySelector(".count-down").innerText = 1;
+                          console.log("1");
+                          setTimeout(() => {
+                            document.querySelector(".count-down").innerText = "HAPPY INDEPENDECE DAY";
+                            console.log("HAPPY INDEPENDECE DAY");
+                          }, 1000);
+                        }, 1000);
+                      }, 1000);
+                    }, 1000);
+                  }, 1000);
+                }, 1000);
+              }, 1000);
+            }, 1000);
+          }, 1000);
+        }, 1000);
+      }, 1000);
+    
+    
+    </script>
+  </body>
+</html>
