@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+     <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <style>
+      body {
+        min-height: 100vh;
+        display: grid;
+        place-content: center;
+        margin: 0 auto;
+      }
+
+      .img {
+        object-fit: cover;
+        width: 1000px;
+        height: 500px;
+        background-repeat: no-repeat;
+      }
+       .button-container {
+        display: flex;
+        width: 1000px;
+      }
+
+      i{
+        background: transparent;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="button-container">
+      <button onclick="back()" aria-label="start the slideshow">
+        <i class="fa-solid fa-chevron-left"></i>
+      </button>
+      <div class="img"></div>
+
+      <button onclick="next()" aria-label="start the slideshow">
+        <i class="fa-solid fa-chevron-right"></i>
+      </button>
+    </div>
+
+    <script>
+      const images = [
+        "img06.jpg",
+        "img07.jpg",
+        "img08.jpg",
+        "img10.jpg",
+        "img12.jpg",
+        "img13.jpg",
+      ];
+      const slides = document.querySelector(".img");
+      let imageIndex = 0;
+      setInterval(() => {
+        slides.style.background = `url( ${
+          images[imageIndex % images.length]
+        })`;
+        imageIndex++;
+      }, 1000 * 2);
+    </script>
+  </body>
+</html>
