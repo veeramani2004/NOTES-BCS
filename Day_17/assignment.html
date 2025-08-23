@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      display: flex;
+      gap: 5px;
+      flex-wrap: wrap;
+      margin: 0;
+      /* grid-template-columns: 1fr 1fr 1fr 1fr; */
+    }
+    .container {
+      width: 250px;
+      box-shadow: 2px 2px 5px rgba(109, 107, 107, 0.589);
+      padding: 10px;
+      border-radius: 10px;
+      img {
+        object-fit: cover;
+        width: 100%;
+        padding: 0px;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+      }
+
+      span{
+        font-weight: 700;
+      }
+    }
+  </style>
+  <body>
+    <script>
+      let countriesInfo = [
+        {
+          name: "India",
+          population: " 1,394,975,829",
+          region: "Asia",
+          flag: "https://upload.wikimedia.org/wikipedia/commons/7/7b/India_flag_300.png",
+          capital: "New delhi",
+        },
+        {
+          name: "Germany",
+          population: "81,770,900",
+          region: "Europe",
+          flag: "https://upload.wikimedia.org/wikipedia/en/thumb/b/ba/Flag_of_Germany.svg/1200px-Flag_of_Germany.svg.png",
+          capital: "Berlin",
+        },
+        {
+          name: "United states",
+          population: "323,947,000",
+          region: "Americas",
+          flag: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Flag_of_the_United_States.svg/640px-Flag_of_the_United_States.svg.png",
+          capital: "Washington D.C",
+        },
+        {
+          name: "Brazil",
+          population: "206,135,893",
+          region: "Americas",
+          flag: "https://upload.wikimedia.org/wikipedia/commons/0/01/Brazil_flag_300.png",
+          capital: "Brasilia",
+        },
+        {
+          name: "Iceland",
+          population: "334,300",
+          region: "Europe",
+          flag: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Flag_of_Iceland.svg/640px-Flag_of_Iceland.svg.png",
+          capital: "Reykjavik",
+        },
+        {
+          name: "India",
+          population: " 1,394,975,829",
+          region: "Asia",
+          flag: "https://upload.wikimedia.org/wikipedia/commons/7/7b/India_flag_300.png",
+          capital: "New delhi",
+        },
+        {
+          name: "Germany",
+          population: "81,770,900",
+          region: "Europe",
+          flag: "https://upload.wikimedia.org/wikipedia/en/thumb/b/ba/Flag_of_Germany.svg/1200px-Flag_of_Germany.svg.png",
+          capital: "Berlin",
+        },
+        {
+          name: "United states",
+          population: "323,947,000",
+          region: "Americas",
+          flag: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Flag_of_the_United_States.svg/640px-Flag_of_the_United_States.svg.png",
+          capital: "Washington D.C",
+        },
+      ];
+
+      //   const name = ['Population','Region','Capital'];
+
+      for (let country of countriesInfo) {
+        const divi = document.createElement("div");
+        divi.className = "container";
+
+        const flag = document.createElement("img");
+        flag.src = country.flag;
+
+        const name = document.createElement("h3");
+        name.innerText = country.name;
+
+        const population = document.createElement("p");
+        population.className = "pop";
+        population.innerText = `Population:` + `${country.population}`;
+
+        const region = document.createElement("h3");
+        region.innerText = `Region: ` + country.region;
+
+        const capital = document.createElement("h3");
+        capital.innerText =` ${<span> Capital: </span>}$ + country.capital`;
+
+        // document.querySelector('divi').append(name, population);
+        divi.append(flag, name, population, region, capital);
+        document.body.append(divi);
+      }
+    </script>
+  </body>
+</html>
+
