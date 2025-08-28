@@ -193,7 +193,7 @@
   ```
 - List all buildings and the distinct employee roles in each building (including empty buildings)
   ```sql
-  SELECT distinct role,building_name
+  SELECT distinct building_name,role
   FROM buildings
   left join employees
   on building_name=building
@@ -240,3 +240,64 @@
   on id=movie_id
   where year % 2=0
   ```
+
+## Exercise 10 — Tasks
+
+- Find the longest time that an employee has been at the studio
+  ```sql
+  SELECT name,max(years_employed)
+  FROM employees;
+  ```
+- For each role, find the average number of years employed by employees in that role
+  ```sql
+  SELECT role, AVG(years_employed)
+  FROM employees
+  group by role
+  ```
+- Find the total number of employee years worked in each building
+  ```sql
+  SELECT building,sum(years_employed)
+  FROM employees
+  group by building
+  ```
+
+## Exercise 11 — Tasks
+
+- Find the number of Artists in the studio (without a HAVING clause)
+  ```sql
+  SELECT role,count(name)
+  FROM employees
+  where role='Artist'
+  ```
+- Find the number of Employees of each role in the studio
+  ```sql
+  SELECT role,count(name)
+  FROM employees
+  group by role
+  ```
+- Find the total number of years employed by all Engineers
+  ```sql
+  SELECT role,sum(years_employed)
+  FROM employees
+  where role='Engineer'
+  ```
+
+## Exercise 12 — Tasks
+
+- Find the number of movies each director has directed
+  ```sql
+  SELECT director,count(title)
+  FROM movies
+  group by director
+  ```
+- Find the total domestic and international sales that can be attributed to each director
+  ```sql
+  SELECT movies.director,
+      sum(boxoffice.domestic_sales+boxoffice.international_sales)as total_sales
+  FROM movies
+  inner join boxoffice
+  on movies.id=boxoffice.movie_id
+  group by movies.director
+  ```
+
+# DML & DDL
